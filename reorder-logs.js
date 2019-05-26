@@ -33,6 +33,10 @@ function compareAlphabetLogs(a, b) {
     return 0; // They are identical, down to the identifiers
 }
 
+/**
+ * Identifiers need to be compared last, so put them at the end.
+ * Also split the entire log into an array of different elements.
+ */
 function normalizeIdentifierInAlphabetLogs(log) {
     // Get the characters in the logs in their own array, pop off the top (identifiers)
     let logAsList = log.split(' ')
