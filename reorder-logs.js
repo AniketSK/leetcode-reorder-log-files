@@ -11,7 +11,20 @@
  */
 function compareFunction(a, b)
 {
-    return a - b
+    let aIsNumber = isNumberLog(a)
+    let bIsNumber = isNumberLog(b)
+    if ( aIsNumber && bIsNumber ) {
+        return 0 // Their relative position is maintained by considering them equal.
+    }
+    else if ( aIsNumber && !bIsNumber) {
+        return 1 // a is less than since it's an alphabet log
+    } else if ( !aIsNumber && bIsNumber ) {
+        return -1 // a is greater than since it's the alphabet log
+    } else {
+        // They are both alphabet logs
+
+    }
+
 }
 
 /**

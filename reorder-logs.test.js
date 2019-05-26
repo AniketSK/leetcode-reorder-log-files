@@ -11,6 +11,19 @@ test('isNumberLog correctly identifies for number logs' , () => {
     expect(isNumberLog("zo4 4 7")).toBe(true)
 })
 
+test('number logs are moved behind alphabet logs', () => {
+    let exampleData = ["a1 3 4 5","b3 a b c"]
+    let expectedOutput = ["b3 a b c", "a1 3 4 5"]
+    expect(reorderLogFiles(exampleData)).toEqual(expectedOutput)
+})
+
+test('number logs are left behind alphabet logs', () => {
+    let exampleData = ["b3 a b c", "a1 3 4 5"]
+    let expectedOutput = ["b3 a b c", "a1 3 4 5"]
+    expect(reorderLogFiles(exampleData)).toEqual(expectedOutput)
+})
+
+
 test.skip('Gets the expected output', () => {
     let result = reorderLogFiles(sampleInput)
     expect(result).toEqual(expectedOutput)
