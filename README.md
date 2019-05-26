@@ -7,3 +7,4 @@ The important insights here as follows:
  b. Sort the alphabetical parts
  c. Append the numbers to the end of that sorted array
 3. Since they want to sort on the identifier last, lets just move the identifier to the end of the array. That way, normal sorting gets us exactly what we need.
+4. Use the javascript sort method, with a custom [compare function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Syntax), to do the sorting for us. 
