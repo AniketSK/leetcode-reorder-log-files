@@ -36,11 +36,11 @@ function compareAlphabetLogs(a, b) {
 function normalizeIdentifierInAlphabetLogs(log) {
     // Get the characters in the logs in their own array, pop off the top (identifiers)
     let listA = log.split(' ')
-    let aTiebreaker = listA.shift()
+    let logIdentifier = listA.shift()
 
     // Attach the identifers at the end for comparison. Note numbers need to be
     //  handled differently from the characters.
-    listA = listA.concat( aTiebreaker.split('') )
+    listA = listA.concat( logIdentifier.split('') )
 
     return listA
 }
