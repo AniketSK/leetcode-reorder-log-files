@@ -23,6 +23,11 @@ test('number logs are left behind alphabet logs', () => {
     expect(reorderLogFiles(exampleData)).toEqual(expectedOutput)
 })
 
+test('number logs are not reordered relative to alphabet logs', () => {
+    let exampleData = ["a1 3 4 5", "c4 3 4 1", "b3 a b c",  "d8 2 3 1"]
+    let expectedOutput = ["b3 a b c", "a1 3 4 5", "c4 3 4 1", "d8 2 3 1"]
+    expect(reorderLogFiles(exampleData)).toEqual(expectedOutput)
+})
 
 test.skip('Gets the expected output', () => {
     let result = reorderLogFiles(sampleInput)
