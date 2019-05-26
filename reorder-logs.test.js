@@ -7,7 +7,7 @@ test('isNumberLog correctly identifies alphabet logs' , () => {
     expect(isNumberLog("g1 act car")).toBe(false)
 })
 
-test.skip('isNumberLog correctly identifies for number logs' , () => {
+test('isNumberLog correctly identifies for number logs' , () => {
     expect(isNumberLog("zo4 4 7")).toBe(true)
 })
 

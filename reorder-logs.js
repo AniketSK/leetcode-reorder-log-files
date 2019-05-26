@@ -20,7 +20,8 @@ function compareFunction(a, b)
  * false for "g1 act car"
  */
 function isNumberLog(log) {
-
+    // Take the first element of the log and check its type.
+    return !Number.isNaN(Number.parseInt(log.split(' ')[1]))
 }
 
 /**
