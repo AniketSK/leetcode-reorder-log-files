@@ -1,0 +1,14 @@
+{
+  "name": "reorder-log-files",
+  "version": "1.0.0",
+  "description": "Solving https://leetcode.com/problems/reorder-log-files/",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "anikadamg@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
