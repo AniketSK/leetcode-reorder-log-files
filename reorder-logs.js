@@ -41,7 +41,9 @@ function compareLogs(a, b)
  * Since a < b, but 2 > 3, there's a reversal of the comparsion when you get down to numbers
  */
 function compareAlphabetLogs(a, b) {
-
+    let comparableA = normalizeIdentifierInAlphabetLogs(a)
+    let comparableB = normalizeIdentifierInAlphabetLogs(b)
+    
 }
 
 function normalizeIdentifierInAlphabetLogs(log) {
