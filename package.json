@@ -4,7 +4,7 @@
   "description": "Solving https://leetcode.com/problems/reorder-log-files/",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch" 
   },
   "author": "anikadamg@gmail.com",
   "license": "ISC",
