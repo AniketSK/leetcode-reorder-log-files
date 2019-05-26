@@ -42,7 +42,7 @@ function compareLogs(a, b)
  */
 function compareAlphabetLogs(a, b) {
     let first = normalizeIdentifierInAlphabetLogs(a)
-    let second = normalizeIdentifierInAlphabetLogs(b))
+    let second = normalizeIdentifierInAlphabetLogs(b)
     for(i = 0; i < Math.min(first.length,second.length); i++ ){
         if ( first[i] < second[i] ) {
             return -1
