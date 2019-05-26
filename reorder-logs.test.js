@@ -26,6 +26,18 @@ test('number logs are not reordered relative to alphabet logs', () => {
     expect(reorderLogFiles(exampleData)).toEqual(expectedOutput)
 })
 
+test('alphabet logs are sorted alphabetically, ignoring identifier', () => {
+    let exampleData = ["a1 c d e", "b2 a d e"]
+    let expectedOutput = ["b2 a d e", "a1 c d e"]
+    expect(reorderLogFiles(exampleData)).toEqual(expectedOutput)
+})
+
+test.skip('alphabet logs are sorted alphabetically, when only identifiers differ', () => {
+    let exampleData = ["b2 a", "a2 a"]
+    let expectedOutput = ["a2 a", "b2 a"]
+    expect(reorderLogFiles(exampleData)).toEqual(expectedOutput)
+})
+
 
 
 test.skip('Gets the expected output', () => {

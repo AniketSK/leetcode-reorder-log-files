@@ -22,8 +22,25 @@ function compareLogs(a, b)
         return -1 // a is greater than since it's the alphabet log
     } else {
         // They are both alphabet logs
-
+        return compareAlphabetLogs(a, b)
     }
+}
+
+/**
+ * Both a and b are guaranteed to be alphabet logs.
+ * Since we ignore the identifiers at first but compare if their entire contents are equal:
+ * 1. Just reordering the identifiers to the end and breaking early to inequalities achives
+ *      what we're trying to do.
+ * If their values are unequal, it'll break before it reaches the indentifiers.
+ * So all we need to do is to put the identifier at the end and then compare normally
+ * The only problem with this approach
+ */
+function compareAlphabetLogs(a, b) {
+    let listA = a.split(' ')
+    let aTiebreaker = listA.pop()
+    let listB = b.split(' ')
+    let bTieBreaker = listB.pop()
+
 }
 
 /**
