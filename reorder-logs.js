@@ -9,7 +9,7 @@
  * @param {string} a one item to compare
  * @param {string} b second item that you're comparing with
  */
-function compareFunction(a, b)
+function compareLogs(a, b)
 {
     let aIsNumber = isNumberLog(a)
     let bIsNumber = isNumberLog(b)
@@ -24,7 +24,6 @@ function compareFunction(a, b)
         // They are both alphabet logs
 
     }
-
 }
 
 /**
@@ -42,7 +41,7 @@ function isNumberLog(log) {
  * @return {string[]}
  */
 function reorderLogFiles(logs) {
-    return logs.sort(compareFunction);
+    return logs.sort(compareLogs);
 };
 
 
