@@ -51,7 +51,7 @@ function normalizeIdentifierInAlphabetLogs(log) {
 
     // Attach the identifers at the end for comparison. Note numbers need to be
     //  handled differently from the characters.
-    listA = listA.concat( aTiebreaker.split() )
+    listA = listA.concat( aTiebreaker.split('') )
 
     return listA
 }
