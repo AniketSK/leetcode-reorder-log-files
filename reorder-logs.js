@@ -6,30 +6,10 @@
  *  2. Alphabet strings should be sorted lexicographically (alphebatized) but igoring the
  *         first word, which remains the identifier except:
  *  3. If two letter logs tie, then the identifier is used to order them.
- * @param {string} a one item to compare
- * @param {string} b second item that you're comparing with
- */
-function compareLogs(a, b)
-{
-    let aIsNumber = isNumberLog(a)
-    let bIsNumber = isNumberLog(b)
-    if ( aIsNumber && bIsNumber ) {
-        return 0 // Their relative position is maintained by considering them equal.
-    }
-    else if ( aIsNumber && !bIsNumber) {
-        return 1 // a is less than since it's an alphabet log
-    } else if ( !aIsNumber && bIsNumber ) {
-        return -1 // a is greater than since it's the alphabet log
-    } else {
-        // They are both alphabet logs
-        return compareAlphabetLogs(a, b)
-    }
-}
-
-/**
+ *
  * Both a and b are guaranteed to be alphabet logs.
  * Since we ignore the identifiers at first but compare if their entire contents are equal:
- * 1. Just reordering the identifiers to the end and breaking early to inequalities achives
+ * 4. Just reordering the identifiers to the end and breaking early to inequalities achives
  *      what we're trying to do.
  * If their values are unequal, it'll break before it reaches the indentifiers.
  * So all we need to do is to put the identifier at the end and then compare normally
@@ -76,11 +56,17 @@ function isNumberLog(log) {
 }
 
 /**
- * @param {string[]} logs
- * @return {string[]}
+ * Because javascript doesn't have a stable sort and we can't guarantee that the numbers won't be the same position,
+ *  we're going to take all the numbers out of the array, sort it alphabetically and then append them back at the end.
+ *  Dodging the need for a stable sort since the numbers will all be at the end anyway.
+ * @param {string[]} logs to sort
+ * @return {string[]} the sorted logs
  */
 function reorderLogFiles(logs) {
-    return logs.sort(compareLogs);
+    let onlyNumberLogs = logs.filter(isNumberLog) // Take the number logs out
+    return logs.filter(num => !isNumberLog(num)) // Send only the alphabet logs array for sorting.
+            .sort(compareAlphabetLogs)
+            .concat(onlyNumberLogs) // Add the number logs back
 };
 
 
