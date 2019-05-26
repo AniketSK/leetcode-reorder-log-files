@@ -1,8 +1,5 @@
 const { reorderLogFiles, isNumberLog } = require('./reorder-logs');
 
-let sampleInput = ["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"]
-let expectedOutput = ["g1 act car","a8 act zoo","ab1 off key dog","a1 9 2 3 1","zo4 4 7"]
-
 test('isNumberLog correctly identifies alphabet logs' , () => {
     expect(isNumberLog("g1 act car")).toBe(false)
 })
@@ -29,7 +26,12 @@ test('number logs are not reordered relative to alphabet logs', () => {
     expect(reorderLogFiles(exampleData)).toEqual(expectedOutput)
 })
 
+
+
 test.skip('Gets the expected output', () => {
+    let sampleInput = ["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"]
+    let expectedOutput = ["g1 act car","a8 act zoo","ab1 off key dog","a1 9 2 3 1","zo4 4 7"]
+
     let result = reorderLogFiles(sampleInput)
     expect(result).toEqual(expectedOutput)
 })
